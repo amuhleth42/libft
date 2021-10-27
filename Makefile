@@ -10,6 +10,7 @@ SRCS	= ft_atoi.c 			\
 		  ft_isprint.c			\
 		  ft_tolower.c			\
 		  ft_toupper.c			\
+		  ft_memset.c			\
 
 
 OBJS	= ${SRCS:.c=.o}
