@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 17:39:09 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/10/27 16:02:12 by amuhleth         ###   ########.fr       */
+/*   Created: 2021/10/27 13:51:02 by amuhleth          #+#    #+#             */
+/*   Updated: 2021/10/27 15:59:05 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_toupper(int c)
-{
-	if ('a' <= c && c <= 'z')
-		c = c - 'a' + 'A';
-	return (c);
-}
+# include <stdlib.h>
+
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int	ft_isalnum(int c);
+int	ft_isascii(int c);
+int	ft_isprint(int c);
+int	ft_atoi(const char *str);
+
+#endif

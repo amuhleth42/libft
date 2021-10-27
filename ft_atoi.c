@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:47:41 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/10/25 18:07:04 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/10/27 14:08:34 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int	ft_atoi(const char *str)
 	return (nb * sign);
 }
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	(void) argc;
 	printf("Lib : %d\n", atoi(argv[1]));
 	printf("Cust : %d\n", ft_atoi(argv[1]));
 	return (0);
-}
+} */
