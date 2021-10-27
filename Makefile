@@ -11,6 +11,7 @@ SRCS	= ft_atoi.c 			\
 		  ft_tolower.c			\
 		  ft_toupper.c			\
 		  ft_memset.c			\
+		  ft_bzero.c			\
 
 
 OBJS	= ${SRCS:.c=.o}
