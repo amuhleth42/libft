@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 13:51:02 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/10/27 19:26:58 by amuhleth         ###   ########.fr       */
+/*   Created: 2021/10/27 21:27:03 by amuhleth          #+#    #+#             */
+/*   Updated: 2021/10/27 21:38:53 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t	i;
+	int		result;
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_atoi(const char *str);
-int	ft_isspace(int c);
-size_t	ft_strlen(const char *s);
-
-#endif
+	p1 = (unsigned char *) s1;
+	p2 = (unsigned char *) s2;
+	result = 0;
+	i = 0;
+	while (!result && i < n)
+	{
+		result = (unsigned char) p1[i] - (unsigned char) p2[i];
+		i++;
+	}
+	return (result);
+}
