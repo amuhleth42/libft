@@ -23,6 +23,7 @@ SRCS	= ft_atoi.c 			\
 		  ft_strncmp.c			\
 		  ft_strdup.c			\
 		  ft_strlcpy.c			\
+		  ft_calloc.c			\
 
 
 OBJS	= ${SRCS:.c=.o}
