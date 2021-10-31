@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:16:56 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/10/27 19:25:16 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/10/31 17:12:20 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 	if (dstsize <= dstlen)
 		return (dstsize + ft_strlen(src));
 	i = 0;
-	while (src[i] && dstlen + 1 < dstsize - 1)
+	while (src[i] && dstlen + i < dstsize - 1)
 	{
 		dst[dstlen + i] = src[i];
 		i++;
