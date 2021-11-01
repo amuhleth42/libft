@@ -6,38 +6,58 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 17:18:34 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/11/01 18:00:29 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/11/01 19:12:02 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-char	*ft_strtrim(const char *s1, const char *set)
+static int	ft_get_end(const char *s1, const char *set)
 {
-	char	*p_start;
-	int		i;
+	int	len;
+	int	i;
 
-	p_start = (char *) s1;
+	len = ft_strlen(s1);
 	i = 0;
 	while (set[i])
 	{
-		if (set[i] == *p_start)
+		if (set[i] == s1[len - 1])
 		{
-			p_start++;
+			len--;
 			i = 0;
 		}
 		else
 			i++;
 	}
-	return (p_start);
+	return (len);
 }
 
-int	main(int argc, char **argv)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	if (argc == 3)
+	char	*result;
+	int		i;
+	int		end;
+
+	if (!s1 || !set)
+		return (NULL);
+	i = 0;
+	while (set[i])
 	{
-		printf("%s\n", ft_strtrim(argv[1], argv[2]));
+		if (set[i] == *s1)
+		{
+			s1++;
+			i = 0;
+		}
+		else
+			i++;
 	}
-	return (0);
+	if (*s1 == '\0')
+		return (calloc(sizeof(char), 1));
+	end = ft_get_end(s1, set);
+	result = (char *) ft_calloc(sizeof(char), end + 1);
+	if (!result)
+		return (NULL);
+	ft_strlcpy(result, s1, end + 1);
+	return (result);
 }
