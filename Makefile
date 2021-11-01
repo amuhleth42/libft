@@ -27,6 +27,8 @@ SRCS	= ft_atoi.c 			\
 		  ft_substr.c			\
 		  ft_strjoin.c			\
 		  ft_itoa.c				\
+		  ft_putchar_fd.c		\
+		  ft_putstr_fd.c		\
 
 
 OBJS	= ${SRCS:.c=.o}
