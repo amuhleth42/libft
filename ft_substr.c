@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 18:50:34 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/10/31 19:02:03 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/11/01 19:19:23 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char	*result;
 	size_t	result_len;
 
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_calloc(sizeof(char), 1));
 	p = (char *) &s[start];
 	result_len = ft_strlen(p);
 	if (len < result_len)
