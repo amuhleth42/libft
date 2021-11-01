@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 16:58:07 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/11/01 17:03:09 by amuhleth         ###   ########.fr       */
+/*   Created: 2021/11/01 17:01:25 by amuhleth          #+#    #+#             */
+/*   Updated: 2021/11/01 17:12:02 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (!s)
-		return ;
-	while (*s)
+	unsigned int	nb;
+	unsigned int	sign;
+
+	sign = 0;
+	if (n < 0)
 	{
-		write(fd, s, 1);
-		s++;
+		write(fd, "-", 1);
+		sign = 1;
 	}
+	nb = n * ((sign * -2) + 1);
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	else
+	{
+		ft_putchar_fd(nb + '0', fd);
+		return ;
+	}
+	ft_putnbr_fd(nb % 10, fd);
 }
