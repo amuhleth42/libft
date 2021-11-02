@@ -36,9 +36,13 @@ SRCS	= ft_atoi.c 			\
 		  ft_striteri.c			\
 		  ft_memmove.c			\
 		  ft_split.c			\
+		  ft_lstnew.c			\
 
+SRCS_B	= ft_lstsize.c			\
 
 OBJS	= ${SRCS:.c=.o}
+
+OBJS_B	= ${SRCS_B:.c=.o}
 
 CC		= gcc -Wall -Wextra -Werror
 
@@ -56,6 +60,9 @@ clean:
 fclean:	clean
 	rm -f ${NAME}
 
+bonus:	${OBJS_B}
+	ar -rcs ${NAME} ${OBJS_B}
+
 re:	fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean bonus re 
