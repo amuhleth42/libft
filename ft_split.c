@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:08:42 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/11/02 16:41:12 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:04:27 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,9 @@ char	**ft_split(const char *s, char c)
 	int		i;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	nb_strs = count_strs(s, c);
-	printf("%d\n", nb_strs);
 	strs = (char **) ft_calloc(sizeof(char *), nb_strs + 1);
 	if (!strs)
 		return (NULL);
@@ -61,14 +62,14 @@ char	**ft_split(const char *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		strs[j] = ft_substr(s, 0, ft_substrlen(s, c));
+		strs[j] = ft_substr(&s[i], 0, ft_substrlen(&s[i], c));
 		j++;
 		while (s[i] != c && s[i])
 			i++;
 	}
 	return (strs);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	char	**strs;
@@ -85,4 +86,4 @@ int	main(int argc, char **argv)
 		}
 	}
 	return (0);
-}
+}*/
