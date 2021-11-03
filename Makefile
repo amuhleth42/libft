@@ -36,9 +36,8 @@ SRCS	= ft_atoi.c 			\
 		  ft_striteri.c			\
 		  ft_memmove.c			\
 		  ft_split.c			\
-		  ft_lstnew.c			\
 
-SRCS_B	= ft_lstsize.c			\
+SRCS_B	= ft_lstnew.c			\
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -55,13 +54,13 @@ ${NAME}:	${OBJS}
 	${CC} -c $< -o ${<:.c=.o}
 
 clean:
-	rm -f ${OBJS}
+	rm -f ${OBJS} ${OBJS_B}
 
 fclean:	clean
 	rm -f ${NAME}
 
 bonus:	${OBJS_B}
-	ar -rcs ${NAME} ${OBJS_B}
+	ar -rcs ${NAME} $^
 
 re:	fclean all
 
