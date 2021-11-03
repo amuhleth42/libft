@@ -38,6 +38,8 @@ SRCS	= ft_atoi.c 			\
 		  ft_split.c			\
 
 SRCS_B	= ft_lstnew.c			\
+		  ft_lstadd_front.c		\
+		  ft_lstsize.c			\
 
 OBJS	= ${SRCS:.c=.o}
 
