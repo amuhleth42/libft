@@ -6,11 +6,10 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 17:18:34 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/11/01 19:12:02 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/11/05 15:10:12 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 static int	ft_get_end(const char *s1, const char *set)
@@ -53,7 +52,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 			i++;
 	}
 	if (*s1 == '\0')
-		return (calloc(sizeof(char), 1));
+		return (ft_calloc(sizeof(char), 1));
 	end = ft_get_end(s1, set);
 	result = (char *) ft_calloc(sizeof(char), end + 1);
 	if (!result)
