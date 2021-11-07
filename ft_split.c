@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:08:42 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/11/07 18:23:16 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/11/07 18:28:41 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
+	if (*s == '\0')
+		return (ft_calloc(sizeof(char *), 1));
 	nb_strs = count_strs(s, c);
 	strs = (char **) ft_calloc(sizeof(char *), nb_strs + 1);
 	if (!strs)
