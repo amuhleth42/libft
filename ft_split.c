@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:08:42 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/11/05 15:18:55 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/11/07 18:23:16 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,11 @@ static int	count_strs(const char *s, char c)
 			i++;
 		count++;
 	}
-	if (s[i - 1] == c && c != '\0')
-		count--;
+	if (c != '\0')
+	{
+		if (s[i - 1] == c)
+			count--;
+	}
 	return (count);
 }
 
