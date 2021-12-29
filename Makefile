@@ -2,6 +2,8 @@ NAME	= libft.a
 
 CFLAGS	= -Wall -Werror -Wextra
 
+INCL	= -I . -I./ft_printf
+
 SRCS	+= $(addprefix char/,	\
 		   ft_isalnum.c			\
 		   ft_isalpha.c			\
@@ -58,6 +60,18 @@ SRCS	+= $(addprefix mem/,	\
 SRCS	+= $(addprefix get_next_line/,	\
 		   get_next_line.c)
 
+SRCS	+= $(addprefix ft_printf/,	\
+		   ft_printf.c				\
+		   deal_with_nbr.c			\
+		   deal_with_strings.c		\
+		   itoas.c					\
+		   itoas2.c					\
+		   ft_uitoa.c				\
+		   is_functions.c			\
+		   parsing.c				\
+		   print.c					\
+		   print2.c)
+
 OBJS	= ${SRCS:.c=.o}
 
 CC		= gcc -Wall -Wextra -Werror
@@ -68,7 +82,7 @@ ${NAME}:	${OBJS}
 	ar -rcs $@ $^
 
 .c.o:
-	${CC} -I . -c $< -o ${<:.c=.o}
+	${CC} ${INCL} -c $< -o ${<:.c=.o}
 
 clean:
 	rm -f ${OBJS}
