@@ -55,11 +55,10 @@ SRCS	+= $(addprefix mem/,	\
 		   ft_memcmp.c			\
 		   ft_memset.c)
 
-SRCS	+= get_next_line/get_next_line.c
+SRCS	+= $(addprefix get_next_line/,	\
+		   get_next_line.c)
 
 OBJS	= ${SRCS:.c=.o}
-
-OBJS_B	= ${SRCS_B:.c=.o}
 
 CC		= gcc -Wall -Wextra -Werror
 
@@ -79,4 +78,4 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY:		all clean fclean bonus re 
+.PHONY:		all clean fclean re 

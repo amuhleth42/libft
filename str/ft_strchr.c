@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 21:49:28 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/11/05 14:43:16 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/12/29 19:21:03 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	chaaar;
+	char	chr;
 
-	chaaar = (char) c;
+	if (s == NULL)
+		return (NULL);
+	chr = (char) c;
 	while (*s)
 	{
 		if (*s == chaaar)
