@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:51:02 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/11/05 14:29:42 by amuhleth         ###   ########.fr       */
+/*   Updated: 2021/12/29 18:59:41 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (del)(void *));
 
 int		ft_isspace(int c);
+
+char	*get_next_line(int fd);
 
 #endif

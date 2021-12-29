@@ -55,6 +55,8 @@ SRCS	+= $(addprefix mem/,	\
 		   ft_memcmp.c			\
 		   ft_memset.c)
 
+SRCS	+= get_next_line/get_next_line.c
+
 OBJS	= ${SRCS:.c=.o}
 
 OBJS_B	= ${SRCS_B:.c=.o}
