@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:51:02 by amuhleth          #+#    #+#             */
-/*   Updated: 2021/12/29 18:59:41 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/01/18 17:36:39 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (del)(void *));
 
 int		ft_isspace(int c);
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 char	*get_next_line(int fd);
 
