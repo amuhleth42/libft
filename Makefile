@@ -79,16 +79,21 @@ CC		= gcc -Wall -Wextra -Werror
 all:	${NAME}
 
 ${NAME}:	${OBJS}
-	ar -rcs $@ $^
+	@printf "\nLibft Objects done\n"
+	@ar -rcs $@ $^
+	@printf "Libft done :]\n"
 
 .c.o:
-	${CC} ${INCL} -c $< -o ${<:.c=.o}
+	@${CC} ${INCL} -c $< -o ${<:.c=.o}
+	@printf "Libft object : %-33.33s\r" $<
 
 clean:
-	rm -f ${OBJS}
+	@rm -f ${OBJS}
+	@printf "libft objects deleted\n"
 
 fclean:	clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
+	@printf "libft.a deleted\n"
 
 re:	fclean all
 
