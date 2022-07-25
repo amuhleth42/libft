@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:51:02 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/01/18 17:36:39 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:18:59 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,19 @@ int		ft_isspace(int c);
 char	*get_next_line(int fd);
 
 int		ft_printf(const char *input, ...);
+
+//     Primitive garbage collector in C
+
+typedef struct s_mem t_mem;
+
+typedef struct s_mem
+{
+	void	*ptr;
+	t_mem	*prev;
+	t_mem	*next;
+}			t_mem;
+
+void	*mmalloc(t_mem **list, size_t size);
+void	mfree(t_mem **lst, void *ptr);
 
 #endif
