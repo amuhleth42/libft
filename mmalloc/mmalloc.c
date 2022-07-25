@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:32:00 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/07/25 18:13:07 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:40:30 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void	*mmalloc(t_mem **list, size_t size)
 
 	if (list == NULL)
 		return (NULL);
-	new = ft_calloc(size + sizeof(t_mem));
+	// to do ft_calloc
+	new = calloc(size + sizeof(t_mem), 1);
 	if (!new)
 		return (NULL);
 	p = get_data_location(new);

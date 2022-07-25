@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mmalloc.h                                          :+:      :+:    :+:   */
+/*   print_mem.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 16:25:14 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/07/25 18:37:27 by amuhleth         ###   ########.fr       */
+/*   Created: 2022/07/25 18:27:25 by amuhleth          #+#    #+#             */
+/*   Updated: 2022/07/25 18:43:15 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
+#include <stdio.h>
 
-typedef struct	s_mem t_mem;
-
-typedef struct	s_mem
+void	print_mem(t_mem **lst)
 {
-	void	*ptr;
-	t_mem	*prev;
-	t_mem	*next;
-}				t_mem;
+	t_mem	*p;
 
-void	*mmalloc(t_mem **list, size_t size);
-int		mfree(t_mem **lst, void *ptr);
-int		mmalloc_free(void);
-void	print_mem(t_mem **lst);
+	if (!lst)
+		return ;
+	if (!*lst)
+	{
+		printf("Collector is empty!\n\n");
+		return ;
+	}
+	p = *lst;
+	while (p)
+	{
+		// to do ft_printf
+		printf("Ptr: %p, prev: %p, next: %p\n", p->ptr, p->prev, p->next);
+		p = p->next;
+	}
+	printf("\n");
+}

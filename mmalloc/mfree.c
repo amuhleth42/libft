@@ -6,7 +6,7 @@
 /*   By: amuhleth <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 17:04:24 by amuhleth          #+#    #+#             */
-/*   Updated: 2022/07/25 18:14:38 by amuhleth         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:38:18 by amuhleth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	mfree(t_mem **lst, void *ptr)
 {
 	t_mem	*elem;
 
-	if (p == NULL || lst == NULL)
+	if (ptr == NULL || lst == NULL)
 		return ;
 	if (*lst == NULL)
 		return ;
